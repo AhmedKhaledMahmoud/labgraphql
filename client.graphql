@@ -1,0 +1,140 @@
+mutation createUser {
+ createUser(input:{ firstName:"Mohammed", lastName:"Ali", age:20,username:"moh_ali2", password:"P@ssw0rd" }){
+  username
+
+}
+}
+
+
+mutation loginUser($userInput: UserLoginInput!){
+  loginUser(input:$userInput){
+    token
+    error
+  }
+}
+
+mutation CreatePost {
+  createPost(content:"New Post", token:""){
+    id,
+    error
+    content
+    user {
+      firstName
+  }
+  }
+}
+
+query GetPost($token:String!, $id:ID!){
+  getPost(id: $id, token:$token){
+    content
+    user{
+      firstName
+    }
+  }
+}
+
+
+
+
+////////////////////////////////////////////////////////////
+
+mutation usersMutations {
+  createUser(input:{firstName:"Ahmed",lastName:"Saleh",age:25,username:"saleh",password:"AHMED01113438665"}) {
+   username
+  }
+}
+
+
+mutation usersMutations {
+  createUser(input:{firstName:"Ahmed",lastName:"Saleh",age:25,username:"saleh",password:"AHMED01113438665"}) {
+   id
+   error
+  }
+}
+
+mutation loginUser($userInput: UserLoginInput!){
+  loginUser(input:$userInput){
+    token
+    error
+  }
+}
+
+varible
+
+{
+  "userInput": {
+    "username": "saleh",
+    "password": "AHMED01113438665"
+  }
+}
+
+
+
+
+mutation CreatePost {
+  createPost(content: "New Post", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjNiMzZkODgxNDM3MDNjNTgyYzA4MGYiLCJpYXQiOjE2NDgwNTEzNzR9.JVQgDYQURv_26YxaYhR27oOdJaxLgzZKDeu_swLZ-9A") {
+    id
+    error
+    content
+    user {
+      firstName
+    }
+  }
+}
+
+
+
+mutation deletePost {
+  deletePost(id: "623b4573ea8b4bf7b65f50c0",token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjNiMzZkODgxNDM3MDNjNTgyYzA4MGYiLCJpYXQiOjE2NDgwNTEzNzR9.JVQgDYQURv_26YxaYhR27oOdJaxLgzZKDeu_swLZ-9A") {
+   id
+    user {
+      firstName
+    }
+  }
+}
+
+
+
+mutation updatePost {
+  updatePost(id:"623b44de2d5a989e114596de"content: "update", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjNiMzZkODgxNDM3MDNjNTgyYzA4MGYiLCJpYXQiOjE2NDgwNTEzNzR9.JVQgDYQURv_26YxaYhR27oOdJaxLgzZKDeu_swLZ-9A") {
+    id
+    error
+    content
+    user {
+      firstName
+    }
+  }
+}
+
+
+
+
+query getPost {
+  getPost(id:"623b44de2d5a989e114596de" token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjNiMzZkODgxNDM3MDNjNTgyYzA4MGYiLCJpYXQiOjE2NDgwNTEzNzR9.JVQgDYQURv_26YxaYhR27oOdJaxLgzZKDeu_swLZ-9A") {
+    id
+    error
+    content
+    user {
+      firstName
+    }
+  }
+}
+
+
+
+
+
+
+
+
+query getPosts {
+  getPosts(token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjNiMzZkODgxNDM3MDNjNTgyYzA4MGYiLCJpYXQiOjE2NDgwNTEzNzR9.JVQgDYQURv_26YxaYhR27oOdJaxLgzZKDeu_swLZ-9A") {
+    id
+    error
+    content
+    user {
+      firstName
+    }
+  }
+}
+
